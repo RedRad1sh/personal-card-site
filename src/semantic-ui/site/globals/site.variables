@@ -1,0 +1,10 @@
+/*******************************
+     User Global Variables
+*******************************/
+@black: #09171b;
+@violet: #48436e;
+@green: #7AA485;
+@teal: #28383cc7;
+@grey: #121d1f;
+@primaryColor: @teal;
+@secondaryColor: @green;

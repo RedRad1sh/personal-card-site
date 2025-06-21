@@ -1,0 +1,37 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.227);
+    max-width: 50%;
+    height: 300px;
+}
+
+.card-img {
+    width: 100%;
+    object-fit: contain;
+    max-height: 50%;
+}
+
+.card-title {
+    margin-top: 5px;
+}
+
+.card-stack {
+    margin-top: 5px;
+    font-size: 10px;
+    color: darkgrey;
+}
+
+.cards-carousel {
+    width: 70%;
+    margin: auto;
+    height: max-content;
+}
+
+.card-description {
+    margin-top: 10px;
+}
+
+.card-project-link {
+    margin-top: 20px;
+}

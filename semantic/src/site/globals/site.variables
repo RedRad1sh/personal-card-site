@@ -1,0 +1,8 @@
+/*******************************
+     User Global Variables
+*******************************/
+/* Colors */
+@violet: #48436e;
+@grey           : #A0A0A0;
+@primaryColor: #48436e00;
+@secondaryColor: @grey;

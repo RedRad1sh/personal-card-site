@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap');
+@import "./semantic-ui/site/globals/site.variables";
+
+footer {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background-color: @black;
+  color: aliceblue;
+  text-align: center;
+  z-index: 1000;
+  /* чтобы был поверх другого контента */
+}
+
+footer>p {
+  margin: 5px 0px;
+}
+
+.App {
+  font-family: 'Roboto Condensed', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* высота вьюпорта */
+}
+
+/* Основной контент, чтобы занимать всё свободное пространство */
+.main-content {
+  padding-top: 100px;
+  /* высота хедера */
+  padding-bottom: 30px;
+  /* высота футера */
+  min-height: calc(100vh - 30px);
+  /* высота вьюпорта минус высоты footer */
+  width: 100%;
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-flow: wrap;
+    align-items: baseline;
+  }
+}
+
+.col {
+  width: 23%;
+  margin: 0 5%;
+  position: relative;
+  float: left;
+  font-size: 12px;
+  line-height: 2em;
+}
+
+.headercol {
+  min-width: min-content;
+  max-width: 200px;
+}
+
+.landing-page {
+  color: white;
+  visibility: hidden;
+  height: max-content;
+  width: 100%;
+}
+
+.about {
+  width: 80%;
+  margin: auto;
+  font-size: 18px;
+}
+
+.skills {
+  width: 80%;
+  margin: auto;
+}
+
+.projects {
+  margin-bottom: 70px;
+}
+
+.element-appear {
+  opacity: 0;
+  visibility: visible;
+  animation: 1s linear 1s 1 forwards element-appear;
+}
+
+
+@keyframes element-appear {
+  from {}
+
+  to {
+    opacity: 1;
+  }
+}
+
+.swiper-container {
+  width: 400px;
+  height: 400px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.ui.segment {
+  background-color: #b4dbff2b;
+}
+
+.ui.segments>.segment {
+  width: 95%;
+  margin: auto;
+}
+
+.skill-tree-content {
+  overflow-y: scroll;
+  overflow-wrap: normal;
+  max-width: 95%;
+}
+
+.ui.piled.segments:after, .ui.piled.segments:before, .ui.piled.segment:after, .ui.piled.segment:before {
+  background-color: #9585ff66;
+}

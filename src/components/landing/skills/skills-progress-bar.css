@@ -1,0 +1,238 @@
+h2.plataformas {
+    border: 1px solid #9ACD32;
+    box-shadow: 0px 0px 50px -8px #9ACD32;
+    color: #9ACD32;
+    text-shadow: 1px 1px 5px #000, 0 0 10px #9ACD32, 0 0 20px #9ACD32;
+}
+
+h2.programas {
+    padding: 5px;
+    font-size: medium;
+    margin: 5px 0;
+}
+
+/*.col { width:101%; }*/
+.skill {
+    list-style: none;
+    padding: 5px 5px;
+}
+
+.skill li {
+    margin: 50px 0px;
+    background: #030303;
+    height: 6px;
+    border-radius: 3px;
+    border-left: 1px solid #111;
+    border-top: 1px solid #111;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.skill li em {
+    position: relative;
+    font-style: normal;
+    font-size: 14px;
+    text-align: center;
+    color: #dedede;
+    top: -28px;
+}
+
+.blueline {
+    height: 3px;
+    margin: 2px 0;
+    background: #2187e7;
+    position: absolute;
+    box-shadow: 0px 0px 10px 1px rgba(0, 198, 255, 0.6);
+    left: 0;
+}
+
+.greenline {
+    height: 3px;
+    margin: 2px 0;
+    background: #9ACD32;
+    position: absolute;
+    box-shadow: 0px 0px 10px 1px rgba(173, 255, 47, 0.4);
+    left: 0;
+}
+
+.redline {
+    height: 3px;
+    margin: 2px 0;
+    background: #FF4500;
+    position: absolute;
+    box-shadow: 0px 0px 10px 1px rgba(255, 69, 0, 0.4);
+    left: 0;
+}
+
+.titulo {
+    opacity: 1;
+    animation: titulo 5s ease-out;
+}
+
+@keyframes titulo {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/*programacion*/
+@keyframes html {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 90%;
+    }
+}
+
+@keyframes css {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 95%;
+    }
+}
+
+@keyframes php {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 70%;
+    }
+}
+
+@keyframes javascript {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 50%;
+    }
+}
+
+@keyframes jquery {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 30%;
+    }
+}
+
+/*plataformas*/
+@keyframes wordpress {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 80%;
+    }
+}
+
+@keyframes prestashop {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 60%;
+    }
+}
+
+@keyframes joomla {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 40%;
+    }
+}
+
+@keyframes blogger {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 70%;
+    }
+}
+
+@keyframes tridion {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 60%;
+    }
+}
+
+/*programas*/
+@keyframes dreamweaver {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 90%;
+    }
+}
+
+@keyframes illustrator {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 30%;
+    }
+}
+
+@keyframes photoshop {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 70%;
+    }
+}
+
+@keyframes premiere {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 50%;
+    }
+}
+
+@keyframes flash {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 60%;
+    }
+}
+
+.ui.progress > .label {
+    width: auto;
+    margin-top: 0;
+}
