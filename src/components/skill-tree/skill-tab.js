@@ -20,7 +20,7 @@ export class SkillTab extends React.Component {
 
     render() {
 
-        return <ScrollContainer><TransformWrapper className="scrollable" panning={{disabled: false}} minScale={0.7} initialScale={1}>
+        return <ScrollContainer><TransformWrapper className="scrollable" panning={{disabled: false}} minScale={0.7} maxScale={2} initialScale={1}>
         <TransformComponent><TabPane>            <SkillProvider >
             <SkillTreeGroup className="content" theme={
                 {

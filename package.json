@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "beautiful-skill-tree": "^1.7.1",
     "caniuse-lite": "^1.0.30001721",
+    "isomorphic-fetch": "^3.0.0",
     "my-beautiful-skill-tree": "^1.7.1",
     "node-fetch": "^2.7.0",
     "react": "^18.2.0",
@@ -22,6 +23,7 @@
     "sass": "^1.89.2",
     "semantic-ui-less": "^2.5.0",
     "semantic-ui-react": "^2.1.5",
+    "superagent": "^10.2.1",
     "swiper": "^11.2.8",
     "web-vitals": "^2.1.4"
   },

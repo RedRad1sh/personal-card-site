@@ -1,67 +1,44 @@
 import React from "react";
-import {
-    ItemImage,
-    ItemHeader,
-    ItemExtra,
-    ItemDescription,
-    ItemContent,
-    Item,
-    Icon,
-    ItemMeta,
-    Label,
-    Image,
-    Button,
-    Header
-} from 'semantic-ui-react'
+import {MusicTrack} from './music-track'
+import {TracksApiControllerApi} from '../../server-api/index'
 
 const ItemGroup = React.lazy(() => import('semantic-ui-react').then(mod => ({ default: mod.ItemGroup })));
 
 export class ItemExampleExtraContent extends React.Component {
     playerRef = {}
     state = false
-    handleClick = () => { 
-        if (!this.state) {
-            this.playerRef.current.audio.current.play()
-        } else {
-            this.playerRef.current.audio.current.pause()
-        }
-        this.state = !this.state
-    }
-
-    handleKeyPress = (e) => {
-        if (e.charCode === 32 || e.charCode === 13) {
-            if (!this.state) {
-                this.playerRef.current.audio.current.play()
-            } else {
-                this.playerRef.current.audio.current.pause()
-            }
-        }
-        this.state = !this.state
-    }
-
+    
     constructor(props) {
         super(props)
         this.playerRef = props.playerRef
+        this.state = {
+            data: null,
+            loading: true,
+            error: null,
+        };
+        this.trackElements = []
+    }
+
+    callback = (error, data, response) => {
+        if (data) {
+            console.log(data);
+            this.trackElements = data
+        } else {
+            console.log('API called successfully.');
+        }
+    };
+
+    componentDidMount() {
+        // Вызов функции запроса
+        new TracksApiControllerApi().getAll(this.callback);
     }
 
     render() {
-        const { active } = this.state // заменить на проверку в плеере
-
+        const tracks = this.trackElements
         return <ItemGroup unstackable relaxed>
-            <Item className="track" header="Lofi">
-                <ItemImage size='small' src='https://react.semantic-ui.com/images/wireframe/image.png' />
-                <ItemContent verticalAlign='middle'>
-                    <ItemContent>Lofi Short Mix</ItemContent>
-                    <ItemContent >3:55</ItemContent>
-                    <ItemExtra verticalAlign='middle'>
-                        <Label> <Icon name='itunes note' /> Guitar </Label>
-                        <Label> <Icon name='itunes note' /> Piano </Label>
-                        <Label> <Icon name='itunes note' /> Chill </Label>
-                        <Label> <Icon name='itunes note' /> Meditative </Label>
-                    </ItemExtra>
-                </ItemContent>
-                <Button toggle active={active} onClick={this.handleClick} onKeyPress={this.handleKeyPress} className="btn-play" color="green"><Icon name="play" />Play</Button>
-            </Item>
+            {tracks.map(track => {
+                    return <MusicTrack key={track.id} playerRef={this.playerRef} track={track}></MusicTrack>
+            })}
         </ItemGroup>
     }
 }
