@@ -2,10 +2,41 @@ import React from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import '../card.css'
 import 'swiper/css';
+import {ProjectsApiControllerApi} from "../../server-api/index"
 
 export class LandingProjects extends React.Component {
     constructor(props) {
         super(props);
+        this.projects = []
+    }
+
+    
+    createProject(project) {
+        return <SwiperSlide key={project.id} className="card">
+            <img src={project.image} alt="1 project" className="card-img" />
+            <div className="card-title">{project.name}</div>
+            <div className="card-stack">{project.techStack}</div>
+            <div className="card-description">
+            {project.description}
+            </div>
+            <a href={project.url} className="card-project-link">ИСХОДНЫЙ КОД</a>
+        </SwiperSlide>;
+    }
+
+    callback = (error, data, response) => {
+        if (data) {
+            console.log(data);
+            this.projects = data.map(
+                project => this.createProject(project)
+            )
+        } else {
+            console.log('API called UNsuccessfully.');
+        }
+    };
+
+
+    componentDidMount() {
+        new ProjectsApiControllerApi().getAll3(this.callback)
     }
 
     render() {
@@ -15,15 +46,7 @@ export class LandingProjects extends React.Component {
                 slidesPerView={1}
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}  className="container">
-                <SwiperSlide className="card">
-                    <img src="\images\perlin-Interface.png" alt="1 project" className="card-img" />
-                    <div className="card-title">Procedural-Generaion</div>
-                    <div className="card-stack">C#, WPF</div>
-                    <div className="card-description">
-                        Repository contains an implementation of Perlin Noise generation.
-                    </div>
-                    <a href="https://github.com/RedRad1sh/Procedural-Generaion" className="card-project-link">ТЫК</a>
-                </SwiperSlide>
+                {this.projects}
                 <SwiperSlide className="card">
                     <img src="" alt="1 project" className="card-img" />
                     <div className="card-title">Chat</div>

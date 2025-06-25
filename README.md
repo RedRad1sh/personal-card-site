@@ -88,7 +88,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 Что добавить:
 1. https://proglib.io/p/karkasnye-ekrany-realizaciya-v-react-2020-10-07?ysclid=mbt4jdi6bn358876288:
 https://react.semantic-ui.com/elements/placeholder/
-2. Заменить уровень скиллов на:
-https://react.semantic-ui.com/modules/progress/
+2. Заменить уровень скиллов на: 
+https://react.semantic-ui.com/modules/progress/ - ВЫПОЛНЕНО
 3. EN/RU version
 4. AI чела
+
+Дизайн верхней части сайта:
+Фокус на космосе. Сделать переход не через клик, а через прокрутку и перемещение анимации вместе с прокруткой. Шапка тоже должна появиться после прокрутки. Подумать о применении параллакс эффекта, если это так называется.
+Верхняя часть со вводной частью должна быть ненагруженной и в то же время с какой-то фишкой дизайна.
+
+Нужен дев маскот - нарисовать дракончика.

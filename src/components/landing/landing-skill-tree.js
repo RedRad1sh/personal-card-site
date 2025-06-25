@@ -8,11 +8,7 @@ import {
 } from 'beautiful-skill-tree';
 import { data } from "./skills/skills-data";
 
-
-
 export class LandingSkillTree extends React.Component {
-
-
     constructor(props) {
         super(props)
     }

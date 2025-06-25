@@ -27,7 +27,8 @@ export default class SkillTreeApiControllerApi {
     * @alias module:api/SkillTreeApiControllerApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
-    * default to {@link module:ApiClient#instance} if unspecified.
+    * default to {@link module:ApiClient#instanc
+    e} if unspecified.
     */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;

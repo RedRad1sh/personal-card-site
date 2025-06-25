@@ -44,8 +44,10 @@ export default class GitProjectDto {
         obj.name = ApiClient.convertToType(data['name'], 'String');
       if (data.hasOwnProperty('description'))
         obj.description = ApiClient.convertToType(data['description'], 'String');
+      if (data.hasOwnProperty('techStack'))
+        obj.techStack = ApiClient.convertToType(data['techStack'], 'String');
       if (data.hasOwnProperty('image'))
-        obj.image = ApiClient.convertToType(data['image'], 'Blob');
+        obj.image = ApiClient.convertToType(data['image'], 'String');
       if (data.hasOwnProperty('url'))
         obj.url = ApiClient.convertToType(data['url'], 'String');
     }
@@ -69,7 +71,12 @@ GitProjectDto.prototype.name = undefined;
 GitProjectDto.prototype.description = undefined;
 
 /**
- * @member {Blob} image
+ * @member {String} techStack
+ */
+GitProjectDto.prototype.techStack = undefined;
+
+/**
+ * @member {String} image
  */
 GitProjectDto.prototype.image = undefined;
 

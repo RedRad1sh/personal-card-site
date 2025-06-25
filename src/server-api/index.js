@@ -13,6 +13,7 @@
  *
  */
 import ApiClient from './ApiClient';
+import FilesTracksBody from './model/FilesTracksBody';
 import GitProjectDto from './model/GitProjectDto';
 import SkillCategoryDto from './model/SkillCategoryDto';
 import SkillDto from './model/SkillDto';
@@ -24,6 +25,7 @@ import TrackDto from './model/TrackDto';
 import BasicSkillListApiControllerApi from './api/BasicSkillListApiControllerApi';
 import ProjectsApiControllerApi from './api/ProjectsApiControllerApi';
 import SkillTreeApiControllerApi from './api/SkillTreeApiControllerApi';
+import TrackFileApiControllerApi from './api/TrackFileApiControllerApi';
 import TracksApiControllerApi from './api/TracksApiControllerApi';
 
 /**
@@ -31,8 +33,8 @@ import TracksApiControllerApi from './api/TracksApiControllerApi';
 * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
-* var OpenApiDefinition = require('index'); // See note below*.
 * <pre>
+* var OpenApiDefinition = require('index'); // See note below*.
 * var xxxSvc = new OpenApiDefinition.XxxApi(); // Allocate the API class we're going to use.
 * var yyyModel = new OpenApiDefinition.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
@@ -63,6 +65,12 @@ export {
      * @property {module:ApiClient}
      */
     ApiClient,
+
+    /**
+     * The FilesTracksBody model constructor.
+     * @property {module:model/FilesTracksBody}
+     */
+    FilesTracksBody,
 
     /**
      * The GitProjectDto model constructor.
@@ -129,6 +137,12 @@ export {
     * @property {module:api/SkillTreeApiControllerApi}
     */
     SkillTreeApiControllerApi,
+
+    /**
+    * The TrackFileApiControllerApi service constructor.
+    * @property {module:api/TrackFileApiControllerApi}
+    */
+    TrackFileApiControllerApi,
 
     /**
     * The TracksApiControllerApi service constructor.

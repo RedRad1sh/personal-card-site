@@ -49,7 +49,7 @@ export default class SkillDto {
       if (data.hasOwnProperty('level'))
         obj.level = ApiClient.convertToType(data['level'], 'String');
       if (data.hasOwnProperty('children'))
-        obj.children = ApiClient.convertToType(data['children'], Object);
+        obj.children = ApiClient.convertToType(data['children'], [Object]);
       if (data.hasOwnProperty('active'))
         obj.active = ApiClient.convertToType(data['active'], 'Boolean');
     }
@@ -118,7 +118,7 @@ SkillDto.prototype.level = undefined;
 
 /**
  * Child skills
- * @member {Object} children
+ * @member {Array.<Object>} children
  */
 SkillDto.prototype.children = undefined;
 

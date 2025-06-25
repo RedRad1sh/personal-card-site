@@ -2,35 +2,45 @@ import './skills-progress-bar.css';
 import React from 'react';
 
 import { Progress } from 'semantic-ui-react'
+import {BasicSkillListApiControllerApi} from "../../../server-api/index"
 
 export class SkillsProgressBar extends React.Component {
-
-
     constructor(props) {
         super(props)
     }
-    render() {
 
-        const skillLevelStyle = (level) => {
-            return {
-                "width": `${level}%`,
-                "animation": "html 2s ease-out"
-            }
+    callback = (error, data, response) => {
+        if (data) {
+            console.log(data);
+            this.skillCategories = data.map(
+                category => this.skillCategory(category)
+            )
+        } else {
+            console.log('API called UNsuccessfully.');
         }
+    };
+
+    componentDidMount() {
+        new BasicSkillListApiControllerApi().getAll2(this.callback)
+    }
+
+    skillCategory(category) {
+        return <div className="col">
+            <h2 className="programas titulo flasty">{category.name}</h2>
+            <ul className="skill">
+                {category.progresses.map(skill => 
+                    <Progress key={skill.id} active size='tiny' inverted success percent={skill.progress}>{skill.name}</Progress>
+                    )}
+            </ul>
+        </div>;
+    }
+
+    render() {
 
         return <div className="container container sixteen wide mobile sixteen wide tablet sixteen wide computer column">
             <h1 className='flasty'>Knowledge levels</h1>
             <div className='container'>
-                <div className="col">
-                    <h2 className="programas titulo flasty">Language</h2>
-                    <ul className="skill">
-                        <Progress active size='tiny' inverted success percent={85}>Java</Progress>
-                        <Progress active size='tiny' inverted warning percent={50}>HTML/CSS</Progress>
-                        <Progress size='tiny' inverted error percent={35}>C#</Progress>
-                        <Progress active size='tiny' inverted error percent={30}>JS</Progress>
-                        <Progress size='tiny' inverted error percent={15}>Python</Progress>
-                    </ul>
-                </div>
+                {this.skillCategories}
                 <div className="col">
                     <h2 className="programas titulo flasty">Framework</h2>
                     <ul className="skill">
