@@ -10,6 +10,7 @@ module.exports = {
                 url: false,
                 buffer: false,
             };
+            return webpackConfig;
         }
     },
     plugins: [{
