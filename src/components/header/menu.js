@@ -1,14 +1,10 @@
 import React from "react";
-import { Link } from 'react-router-dom';
 import {
     MenuItem, Menu, Icon, SidebarPusher,
     SidebarPushable,
-    Header,
-    Image,
     Segment,
     Sidebar,
-    Button,
-    Checkbox
+    Button
 } from 'semantic-ui-react'
 
 import './menu.less';

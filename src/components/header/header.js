@@ -1,7 +1,7 @@
 import React from "react";
 import MenuElement from "./menu";
 import "./header.less"
-import { motion, useScroll } from "motion/react"
+import { motion } from "motion/react"
 
 export class Header extends React.Component {
     constructor(props) {

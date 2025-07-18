@@ -5,7 +5,6 @@ import { Header } from "./components/header/header"
 import { ReactNebula } from "@flodlc/nebula";
 import { nebulaConfig } from './config/nebula-config';
 import LandingPage from './components/landing/landing-page';
-import { AskMePage } from './components/askme/askme-page';
 import { MusicPage } from './components/music/music-page';
 import { SkillTreePage } from './components/skill-tree/skill-tree-page';
 import { Routes, Route, useLocation } from 'react-router-dom';

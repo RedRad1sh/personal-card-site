@@ -13,10 +13,6 @@ import {
 export class ContactModule extends React.Component {
     state = { name: '', email: '', exceptions: []}
 
-    constructor(props) {
-        super(props);
-    }
-
     handleChange = (e, { name, value }) => {
         this.setState({ [name]: value })
     }
@@ -25,13 +21,13 @@ export class ContactModule extends React.Component {
         const { name, email } = this.state
         const newExceptions = [];
         console.log(this.state)
-        if (name == '') {
+        if (name === '') {
             newExceptions.push('null-name')
         }
-        if (email == '') {
+        if (email === '') {
             newExceptions.push('null-email')
         }
-        if (newExceptions.length == 0) {
+        if (newExceptions.length === 0) {
             // send message
             console.log('Сообщение отправлено!')
         }

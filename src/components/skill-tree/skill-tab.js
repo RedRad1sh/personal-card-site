@@ -11,10 +11,6 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 export class SkillTab extends React.Component {
 
-    constructor(props) {
-        super(props)
-    }
-
     render() {
 
         return <ScrollContainer><TransformWrapper className="scrollable" panning={{disabled: false}} minScale={0.7} maxScale={2} initialScale={1}>

@@ -6,7 +6,7 @@ import './landing-page.less'
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { github } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { useTypewriter } from 'react-simple-typewriter'
-import { Container, Button, Header, HeaderContent, Icon, Grid, GridRow, GridColumn, Divider, Rail, Segment, Message, Label } from 'semantic-ui-react'
+import { Button, Header, HeaderContent, Icon, Grid, GridRow, GridColumn, Divider } from 'semantic-ui-react'
 import { motion, useScroll } from "motion/react"
 import BlockAppear from "../utils/animations"
 
@@ -16,7 +16,7 @@ const LandingPage = (props) => {
     const { scrollYProgress } = useScroll()
 
     const [compilingDone, setCompilingDone] = useState(false);
-    const [typingText, setTypingText] = useState(`
+    const [typingText] = useState(`
     $ whoami
     Developer from Russia.
     $ cat stack

@@ -5,10 +5,6 @@ import { GridRow, GridColumn, Grid, Image, Message } from 'semantic-ui-react'
 
 export class AskMePage extends React.Component {
 
-    constructor(props) {
-        super(props)
-    }
-
     render() {
         return <div className="main-content">
             <Grid columns={6}>
