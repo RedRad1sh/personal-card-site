@@ -1,5 +1,6 @@
 {
   "name": "personal-react-front",
+  "homepage": "/personal-card-site",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
