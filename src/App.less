@@ -9,7 +9,7 @@ footer {
   background-color: @black;
   color: aliceblue;
   text-align: center;
-  z-index: 1000;
+  z-index: 10;
   /* чтобы был поверх другого контента */
 }
 
@@ -27,7 +27,7 @@ footer>p {
 
 /* Основной контент, чтобы занимать всё свободное пространство */
 .main-content {
-  padding-top: 100px;
+  padding-top: 80px;
   /* высота хедера */
   padding-bottom: 30px;
   /* высота футера */
@@ -42,6 +42,12 @@ footer>p {
   overflow: hidden;
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
+  min-height: 300px;
+}
+
+.container-header {
+  width: 100%;
 }
 
 @media only screen and (max-width: 600px) {
@@ -63,43 +69,6 @@ footer>p {
 .headercol {
   min-width: min-content;
   max-width: 200px;
-}
-
-.landing-page {
-  color: white;
-  visibility: hidden;
-  height: max-content;
-  width: 100%;
-}
-
-.about {
-  width: 80%;
-  margin: auto;
-  font-size: 18px;
-}
-
-.skills {
-  width: 80%;
-  margin: auto;
-}
-
-.projects {
-  margin-bottom: 70px;
-}
-
-.element-appear {
-  opacity: 0;
-  visibility: visible;
-  animation: 1s linear 1s 1 forwards element-appear;
-}
-
-
-@keyframes element-appear {
-  from {}
-
-  to {
-    opacity: 1;
-  }
 }
 
 .swiper-container {
@@ -127,7 +96,7 @@ footer>p {
 }
 
 .ui.segment {
-  background-color: #b4dbff2b;
+  background-color: #1d2b4373;
 }
 
 .ui.segments>.segment {
@@ -141,6 +110,9 @@ footer>p {
   max-width: 95%;
 }
 
-.ui.piled.segments:after, .ui.piled.segments:before, .ui.piled.segment:after, .ui.piled.segment:before {
+.ui.piled.segments:after,
+.ui.piled.segments:before,
+.ui.piled.segment:after,
+.ui.piled.segment:before {
   background-color: #9585ff66;
 }

@@ -2,13 +2,10 @@ import React from "react"
 import {
     SkillTreeGroup,
     SkillTree,
-    SkillProvider,
-    SkillType,
-    SkillGroupDataType
+    SkillProvider
 } from 'beautiful-skill-tree';
-import { extendedData } from "./skills/skills-data";
 import './skill.less'
-import { TabPane, Tab } from 'semantic-ui-react'
+import { TabPane } from 'semantic-ui-react'
 import ScrollContainer from 'react-indiana-drag-scroll'
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 

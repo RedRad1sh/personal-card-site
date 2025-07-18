@@ -1,7 +1,8 @@
 .menu {
-    margin: auto 0;
+    margin: auto 20px auto 40px;
     display: inline;
 }
+
 /* TODO адаптивный переход меню на мобилках*/
 .menulist {
     list-style: none;
@@ -10,8 +11,103 @@
     gap: 30px;
 }
 
+.ui.button.menu-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 20;
+    display: none;
+    padding: 10px;
+    box-shadow: unset !important;
+    background-color: transparent;
+}
+
+.ui.button.menu-button:hover {
+    background-color: white;
+}
+
+.ui.button.menu-button > svg {
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(281deg) brightness(105%) contrast(103%);
+    font-size: 28px;
+    width: 20px;
+    height: 20px;
+}
+
+button.ui.button.menu-button:hover > svg {
+    filter: invert(0%) sepia(6%) saturate(7476%) hue-rotate(328deg) brightness(103%) contrast(106%);
+}
+
+
 .ui.button {
     font-family: 'Flasty';
     font-weight: 100;
 }
 
+.ui.segment.pushable {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    display: none;
+}
+
+.ui.segment.pushable.pushed {
+    z-index: 11;
+    display: block;
+}
+
+.ui.segment.pushable.pushed > div {
+    width: 100%;
+    padding-top: 70px;
+    font-size: 20px;
+}
+
+.socials {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: max-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 20;
+    display: block;
+}
+
+.socials-icon {
+    height: 33px;
+    width: max-content;
+    margin-right: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+    div.ui.inverted.secondary.menulist.menu {
+        visibility: hidden;
+        position: absolute;
+        padding: 80px 20px;
+        left: 0;
+        background-color: #000000cf;
+        width: 100vw;
+        height: 100vh;
+    }
+    .ui > .item {
+        width: 100%;
+    }
+    .chevron.circle.down.icon {
+        font-size: 28px;
+        position: absolute;
+        left: 0;
+        visibility: visible;
+        color: aliceblue;
+    }
+    .ui.button.menu-button {
+        display: block;
+    }
+    .socials {
+        position: absolute;
+        right: 70px;
+    }
+}

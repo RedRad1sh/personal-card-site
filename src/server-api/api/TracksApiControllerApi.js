@@ -13,6 +13,7 @@
  *
  */
 import ApiClient from "../ApiClient";
+import TagDto from '../model/TagDto';
 import TrackDto from '../model/TrackDto';
 
 /**
@@ -132,10 +133,52 @@ export default class TracksApiControllerApi {
      */
 
     /**
+     * @param {Object} opts Optional parameters
+     * @param {Array.<String>} opts.tags 
      * @param {module:api/TracksApiControllerApi~getAllCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
-    getAll(callback) {
+    getAll(opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+
+      let pathParams = {
+        
+      };
+      let queryParams = {
+        'tags': this.apiClient.buildCollectionParam(opts['tags'], 'multi')
+      };
+      let headerParams = {
+        
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [TrackDto];
+
+      return this.apiClient.callApi(
+        '/tracks', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
+     * Callback function to receive the result of the getAllLabels operation.
+     * @callback moduleapi/TracksApiControllerApi~getAllLabelsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/TagDto>{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {module:api/TracksApiControllerApi~getAllLabelsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    getAllLabels(callback) {
       
       let postBody = null;
 
@@ -155,10 +198,10 @@ export default class TracksApiControllerApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [TrackDto];
+      let returnType = [TagDto];
 
       return this.apiClient.callApi(
-        '/tracks', 'GET',
+        '/tracks/tags', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

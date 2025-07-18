@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <mask id="cutout">
+      <rect width="98.07" height="98.346" fill="white" x="1.103" y="0.965"/>
+      <polygon points="4.045 0.965 1.103 9.816 1.103 35.386 2.084 41.287 2.084 58.005 1.103 63.906 1.103 91.443 4.045 99.311 82.502 99.311 84.462 95.378 96.231 95.378 98.192 87.51 98.192 64.89 99.173 57.022 99.173 41.287 98.192 33.42 98.192 8.833 95.25 0.965" fill="black"/>
+    </mask>
+  </defs>
+  <rect width="98.07" height="98.346" fill="black" mask="url(#cutout)" style="" x="1.103" y="0.965"/>
+</svg>

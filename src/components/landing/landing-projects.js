@@ -2,7 +2,11 @@ import React from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import '../card.css'
 import 'swiper/css';
-import {ProjectsApiControllerApi} from "../../server-api/index"
+import { ProjectsApiControllerApi } from "../../server-api/index"
+import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Divider, Header, Icon } from 'semantic-ui-react'
 
 export class LandingProjects extends React.Component {
     constructor(props) {
@@ -10,14 +14,14 @@ export class LandingProjects extends React.Component {
         this.projects = []
     }
 
-    
+
     createProject(project) {
         return <SwiperSlide key={project.id} className="card">
             <img src={project.image} alt="1 project" className="card-img" />
             <div className="card-title">{project.name}</div>
             <div className="card-stack">{project.techStack}</div>
             <div className="card-description">
-            {project.description}
+                {project.description}
             </div>
             <a href={project.url} className="card-project-link">ИСХОДНЫЙ КОД</a>
         </SwiperSlide>;
@@ -41,11 +45,24 @@ export class LandingProjects extends React.Component {
 
     render() {
         return <div className="container container sixteen wide mobile sixteen wide tablet sixteen wide computer column">
-            <h1 className="flasty">Personal projects examples</h1>
-            <Swiper spaceBetween={50}
-                slidesPerView={1}
+            <Divider horizontal className="container-header">
+                <Header inverted as='h1' className="flasty">
+                    <Icon name='bar chart' />
+                    Personal projects examples
+                </Header>
+            </Divider>
+            <Swiper
+                modules={[Navigation, Pagination, EffectCoverflow]}
+                spaceBetween={60}
+                navigation
+                pagination={{ clickable: true }}
+                slidesPerView='auto'
+                effect="coverflow"
+                centeredSlides={true}
+                loop={false}
+                slideToClickedSlide={true}
                 onSlideChange={() => console.log('slide change')}
-                onSwiper={(swiper) => console.log(swiper)}  className="container">
+                onSwiper={(swiper) => console.log(swiper)} className="container">
                 {this.projects}
                 <SwiperSlide className="card">
                     <img src="" alt="1 project" className="card-img" />

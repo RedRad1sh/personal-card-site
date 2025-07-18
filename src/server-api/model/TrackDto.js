@@ -47,8 +47,8 @@ export default class TrackDto {
         obj.description = ApiClient.convertToType(data['description'], 'String');
       if (data.hasOwnProperty('duration'))
         obj.duration = ApiClient.convertToType(data['duration'], 'Number');
-      if (data.hasOwnProperty('tagDtos'))
-        obj.tagDtos = ApiClient.convertToType(data['tagDtos'], [TagDto]);
+      if (data.hasOwnProperty('tags'))
+        obj.tags = ApiClient.convertToType(data['tags'], [TagDto]);
       if (data.hasOwnProperty('fileUrl'))
         obj.fileUrl = ApiClient.convertToType(data['fileUrl'], 'String');
       if (data.hasOwnProperty('image'))
@@ -79,9 +79,9 @@ TrackDto.prototype.description = undefined;
 TrackDto.prototype.duration = undefined;
 
 /**
- * @member {Array.<module:model/TagDto>} tagDtos
+ * @member {Array.<module:model/TagDto>} tags
  */
-TrackDto.prototype.tagDtos = undefined;
+TrackDto.prototype.tags = undefined;
 
 /**
  * @member {String} fileUrl

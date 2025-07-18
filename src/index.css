@@ -4,8 +4,8 @@
 }
 
 .flasty {
-  font-family: 'Flasty';
-  font-weight: 100;
+  font-family: 'Flasty' !important;
+  font-weight: 100 !important;
 }
 
 html,

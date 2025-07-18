@@ -1,0 +1,131 @@
+.minmax(@a, @b, @unit: 'px') {
+    @min: ~"`Math.min(@{a},@{b})`@{unit}";
+    @max: ~"`Math.max(@{a},@{b})`@{unit}";
+}
+
+@maxSkillHeight: 40px;
+@maxSkillHeightMiddle: 40px;
+@skillHeight: 40px;
+
+.landing-page {
+    color: white;
+    visibility: hidden;
+    height: max-content;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.about {
+    position: relative;
+    width: 95%;
+    margin: auto;
+    box-shadow: inset 0 0 20px 0px #263560;
+    clip-path: polygon(0% 0%, 1% 2%, 0% 35%, 1% 41%, 1% 58%, 0 64%, 0 92%, 3% 100%, 83% 100%, 85% 96%, 97% 96%, 99% 88%, 99% 65%, 100% 57%, 100% 41%, 99% 33%, 99% 2%, 100% 0);
+    flex-flow: column;
+}
+
+.segment.about-internal {
+    font-size: 18px !important;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    clip-path: polygon(3% 0, 0 9%, 0 35%, 1% 41%, 1% 58%, 0 64%, 0 92%, 3% 100%, 83% 100%, 85% 96%, 97% 96%, 99% 88%, 99% 65%, 100% 57%, 100% 41%, 99% 33%, 99% 8%, 96% 0);
+    // background: linear-gradient(45deg, #0400ff9c, #1f0053a6, #7b00ff, #0037ff6e)   
+}
+
+section.ui.grey.segment.skills {
+    padding: 0;
+    background: transparent !important;
+    width: 95%;
+    min-height: 280px;
+    margin: auto;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), calc(50% + 50px) calc(100% - 50px), 50% 100%, calc(50% - 50px) calc(100% - 50px), 0 calc(100% - 50px));
+    border-top: none !important;
+    transform: translateY(0px) !important;
+    transition: opacity 0.6s, transform 2s !important;
+}
+
+.skills-internal {
+    background: rgba(83, 95, 185, 0.641);
+    width: -webkit-fill-available;
+    margin: auto;
+    clip-path: polygon(3% 0, 83% 0, 85% 5%, 98% 5%, 100% 14%, 100% 100%, 47% 100%, 0 100%, 0% 35%, 0 6%);
+}
+
+section.ui.segment.grey.projects {
+    clip-path: polygon(0 0, calc(50% - 4.14px - 50px) 0, 50% calc(50px + 4.14px), calc(50% + 4.14px + 50px) 0, 100% 0, 100% 100%, 0 100%);
+    margin-top: -40px !important;
+    padding-top: 60px;
+    width: 95%;
+    margin: auto;
+}
+
+section.ui.segment.grey.contact {
+    width: 95%;
+    margin: auto;
+}
+
+.element-appear {
+    opacity: 0;
+    visibility: visible;
+    animation: 1s linear 1s 1 forwards element-appear;
+}
+
+code {
+    white-space: pre-wrap !important;
+}
+
+pre {
+    color: white !important;
+    background: rgba(11, 9, 17, 0.305) !important;
+    padding: 20px !important;
+    font-size: 13px;
+    text-align: left;
+}
+
+@media only screen and (min-width: 600px) {
+    pre {
+        padding: 20px !important;
+    }
+}
+
+
+@keyframes element-appear {
+    from {}
+
+    to {
+        opacity: 1;
+    }
+}
+
+.swiper {
+    padding: 30px 0px;
+}
+
+.name {
+    color: LIGHTGREY;
+    font-size: 40px;
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.about-grid {
+    margin: 0 !important;
+}
+
+.ui.violet.button.contact-button {
+    margin-bottom: 20px;
+}
+
+
+.skill > .ui > .label:hover {
+    transition: color .3s;
+    color: #00b5ad;
+}
+
+.blink::after{content:'|';animation:blink 1s infinite;}

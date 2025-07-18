@@ -1,18 +1,5 @@
-import React, { useState, useEffect } from "react"
-import {
-    SkillTreeGroup,
-    SkillTree,
-    SkillProvider,
-    SkillType,
-    SkillGroupDataType
-} from 'beautiful-skill-tree';
-import { extendedData } from "./skills/skills-data";
-import { frameworkData } from "./skills/skills-framework";
-import { patternData } from "./skills/skills-patterns";
-import { dbData } from "./skills/skills-databases";
-import { javaCoreData } from "./skills/skills-java-core";
-import { TabPane, Tab } from 'semantic-ui-react'
-import { ciCdData } from "./skills/skills-ci-cd";
+import React from "react"
+import { Tab } from 'semantic-ui-react'
 import { SkillTab } from "./skill-tab";
 
 import { SkillTreeApiControllerApi } from "../../server-api/index"
@@ -27,16 +14,18 @@ export class SkillTreePage extends React.Component {
         this.state = {
             data: null,
             loading: true,
-            error: null,
+            panes: [],
         };
     }
 
     callback = (error, data, response) => {
         if (data) {
             console.log(data);
-            let skills = data[0].skillList
-            console.log(skills)
-            this.setState({data: skills});
+            let panes = data.map(tree => ({
+                    menuItem: tree.name, render: () => <SkillTab data={tree.skillList} />
+                })
+            )
+            this.setState({panes: panes});
         } else {
             console.log('API called successfully.');
         }
@@ -48,29 +37,19 @@ export class SkillTreePage extends React.Component {
     }
 
     render() {
-        const { data, loading, error } = this.state;
+        const panes = this.state.panes;
 
-
-        const panes = [
-            {
-                menuItem: 'Java Core', render: () => <SkillTab data={javaCoreData} />
-            },
-            {
-                menuItem: 'Frameworks', render: () => <SkillTab data={data} />
-            },
-            {
-                menuItem: 'Patterns', render: () => <SkillTab data={patternData} />
-            },
-            {
-                menuItem: 'Databases', render: () => <SkillTab data={dbData} />
-            },
-            {
-                menuItem: 'CI/CD', render: () => <SkillTab data={ciCdData} />
-            },
-        ]
-
-        return <div className="ui main-content">
+        return <div className="ui main-content segments">
+            <section className="ui segment tree-about">
+                <p>
+                    What's this?
+                </p>
+                <p>It is a tree of my current skill where i track new technologies i learned</p>
+                <p>I plan to add online tool for fillling such trees for other users experience later.</p>
+            </section>
+            <section className="ui segment">
             <Tab menu={{ inverted: true }} panes={panes} />
+            </section>
         </div>
     }
 

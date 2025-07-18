@@ -1,7 +1,7 @@
 import './skills-progress-bar.css';
 import React from 'react';
 
-import { Progress } from 'semantic-ui-react'
+import { Progress, Divider, Header, Icon } from 'semantic-ui-react'
 import {BasicSkillListApiControllerApi} from "../../../server-api/index"
 
 export class SkillsProgressBar extends React.Component {
@@ -38,7 +38,13 @@ export class SkillsProgressBar extends React.Component {
     render() {
 
         return <div className="container container sixteen wide mobile sixteen wide tablet sixteen wide computer column">
-            <h1 className='flasty'>Knowledge levels</h1>
+            <Divider horizontal className='container-header'>
+                <Header inverted as='h1' className="flasty">
+                    <Icon name='book' />
+                    Knowledge levels
+                </Header>
+            </Divider>
+            <Divider></Divider>
             <div className='container'>
                 {this.skillCategories}
                 <div className="col">

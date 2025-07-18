@@ -57,11 +57,11 @@ export class MusicTrack extends React.Component {
             <ItemContent verticalAlign='middle'>
                 <ItemContent>{title}</ItemContent>
                 <ItemContent >{duration}</ItemContent>
+                <ItemContent >{description}</ItemContent>
                 <ItemExtra verticalAlign='middle'>
-                    <Label> <Icon name='itunes note' /> Guitar </Label>
-                    <Label> <Icon name='itunes note' /> Piano </Label>
-                    <Label> <Icon name='itunes note' /> Chill </Label>
-                    <Label> <Icon name='itunes note' /> Meditative </Label>
+                    {tags.map(tag => 
+                        <Label> <Icon name='itunes note' /> {tag.name} </Label>
+                    )}
                 </ItemExtra>
             </ItemContent>
             <Button toggle active={active} onClick={this.handleClick} onKeyPress={this.handleKeyPress} className="btn-play" color="green"><Icon name="play" />Play</Button>

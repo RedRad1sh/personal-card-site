@@ -38,8 +38,6 @@ export default class TagDto {
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new TagDto();
-      if (data.hasOwnProperty('id'))
-        obj.id = ApiClient.convertToType(data['id'], 'String');
       if (data.hasOwnProperty('name'))
         obj.name = ApiClient.convertToType(data['name'], 'String');
       if (data.hasOwnProperty('icon'))
@@ -48,11 +46,6 @@ export default class TagDto {
     return obj;
   }
 }
-
-/**
- * @member {String} id
- */
-TagDto.prototype.id = undefined;
 
 /**
  * @member {String} name
