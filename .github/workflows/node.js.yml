@@ -44,6 +44,9 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    env:
+      REACT_APP_LANDING_APP_BASENAME: ${{ vars.REACT_APP_LANDING_APP_BASENAME }}
+      REACT_APP_LANDING_APP_BACKEND_URL: ${{ vars.REACT_APP_LANDING_APP_BACKEND_URL }}
     if: github.ref == 'refs/heads/master' && github.event_name == 'push'
     environment:
       name: github-pages
