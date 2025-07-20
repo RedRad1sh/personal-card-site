@@ -13,6 +13,7 @@
  *
  */
 import superagent from "superagent";
+import { env } from "../config/env.config"
 
 /**
 * @module ApiClient
@@ -31,9 +32,9 @@ export default class ApiClient {
         /**
          * The base URL against which to resolve every API call's (relative) path.
          * @type {String}
-         * @default http://localhost:8080
+         * @default http://localhost:8085
          */
-        this.basePath = 'http://localhost:8080'.replace(/\/+$/, '');
+        this.basePath = env.backendUrl.replace(/\/+$/, '');
 
         /**
          * The authentication methods to be included for all API calls.
