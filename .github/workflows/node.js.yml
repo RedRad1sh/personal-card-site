@@ -40,6 +40,9 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      LANDING_APP_BASENAME: ${{ vars.LANDING_APP_BASENAME }}
+      LANDING_APP_BACKEND_URL: ${{ vars.LANDING_APP_BACKEND_URL }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
