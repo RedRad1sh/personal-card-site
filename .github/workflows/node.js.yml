@@ -17,8 +17,8 @@ permissions:
 jobs:
   build:
     env:
-      LANDING_APP_BASENAME: ${{ vars.REACT_APP_LANDING_APP_BASENAME }}
-      LANDING_APP_BACKEND_URL: ${{ vars.REACT_APP_LANDING_APP_BACKEND_URL }}
+      REACT_APP_LANDING_APP_BASENAME: ${{ vars.REACT_APP_LANDING_APP_BASENAME }}
+      REACT_APP_LANDING_APP_BACKEND_URL: ${{ vars.REACT_APP_LANDING_APP_BACKEND_URL }}
     runs-on: ubuntu-latest
 
     strategy:
@@ -50,10 +50,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'npm'
       - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
