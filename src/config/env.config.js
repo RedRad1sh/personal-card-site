@@ -3,3 +3,4 @@ export const env = {
     backendUrl:     process.env.REACT_APP_LANDING_APP_BACKEND_URL  || 'http://localhost:8085',
     isDev:      process.env.NODE_ENV === 'development',
   };
+console.log(env)
