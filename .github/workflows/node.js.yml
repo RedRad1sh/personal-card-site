@@ -17,8 +17,8 @@ permissions:
 jobs:
   build:
     env:
-      LANDING_APP_BASENAME: ${{ vars.LANDING_APP_BASENAME }}
-      LANDING_APP_BACKEND_URL: ${{ vars.LANDING_APP_BACKEND_URL }}
+      LANDING_APP_BASENAME: ${{ vars.REACT_APP_LANDING_APP_BASENAME }}
+      LANDING_APP_BACKEND_URL: ${{ vars.REACT_APP_LANDING_APP_BACKEND_URL }}
     runs-on: ubuntu-latest
 
     strategy:
