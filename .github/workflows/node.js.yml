@@ -9,6 +9,9 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+env:
+  REACT_APP_LANDING_APP_BASENAME: ${{ vars.REACT_APP_LANDING_APP_BASENAME }}
+  REACT_APP_LANDING_APP_BACKEND_URL: ${{ vars.REACT_APP_LANDING_APP_BACKEND_URL }}
 permissions:
   contents: read
   pages: write
@@ -32,9 +35,6 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-present
-      env:
-        REACT_APP_LANDING_APP_BASENAME: ${{ vars.REACT_APP_LANDING_APP_BASENAME }}
-        REACT_APP_LANDING_APP_BACKEND_URL: ${{ vars.REACT_APP_LANDING_APP_BACKEND_URL }}
     - name: Upload build artifact
       uses: actions/upload-artifact@v4
       with:
