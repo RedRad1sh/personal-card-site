@@ -5,11 +5,12 @@ import 'semantic-ui-less/semantic.less'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { env } from './config/env.config';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={env.basename}>
       <App />
     </BrowserRouter>
   </React.StrictMode>
