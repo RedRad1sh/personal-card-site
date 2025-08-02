@@ -8,16 +8,17 @@ import {
 } from 'semantic-ui-react'
 
 import './menu.less';
+import { Link } from "react-router-dom";
 
 const menuItems = [
-    <MenuItem link href="/" className="menuitem primary">
-        <span><Icon name='home' /> index</span>
+    <MenuItem className="menuitem primary">
+        <Link to={"/"}> <span><Icon name='home' /> index</span></Link>
     </MenuItem>,
-    <MenuItem link href="/skill-tree" className="menuitem primary">
-        <span><Icon name='tree' /> skill-tree</span>
+    <MenuItem className="menuitem primary">
+         <Link to={"/skill-tree"}> <span><Icon name='tree' /> skill-tree</span></Link>
     </MenuItem>,
-    <MenuItem link href="/music" className="menuitem primary">
-        <span><Icon name='music' /> music</span>
+    <MenuItem className="menuitem primary">
+    <Link to={"/music"}> <span><Icon name='music' /> music</span> </Link>
     </MenuItem>,
     // <MenuItem link href="/askme" className="menuitem primary">
     //     <span><Icon name='question'/> askme</span>

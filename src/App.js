@@ -27,8 +27,8 @@ function App() {
       <Routes>
         <Route index element={<LandingPage visible={visible} />} />
         {/* <Route path="askme" element={<AskMePage />} /> */}
-        <Route path="music" element={<MusicPage />} />
-        <Route path="skill-tree" element={<SkillTreePage />} />
+        <Route path="/music" element={<MusicPage />} />
+        <Route path="/skill-tree" element={<SkillTreePage />} />
       </Routes>
       <footer>
         <p>RedRadish © 2025</p>
