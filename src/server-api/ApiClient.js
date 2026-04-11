@@ -9,7 +9,7 @@
  *
  * Swagger Codegen version: 3.0.69
  *
- * Do not edit the class manually.
+ * DO NOT REPLACE
  *
  */
 import superagent from "superagent";

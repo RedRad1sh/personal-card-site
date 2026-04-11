@@ -6,8 +6,6 @@ import { SkillTreeApiControllerApi } from "../../server-api/index"
 
 import './skill.less'
 
-
-
 export class SkillTreePage extends React.Component {
     constructor(props) {
         super(props)
@@ -22,7 +20,7 @@ export class SkillTreePage extends React.Component {
         if (data) {
             console.log(data);
             let panes = data.map(tree => ({
-                    menuItem: tree.name, render: () => <SkillTab data={tree.skillList} />
+                    menuItem: tree.name, render: () => <SkillTab savedSkillData={tree.savedSkillData} treeName={tree.name} treeId={tree.id} data={tree.skillList} />
                 })
             )
             this.setState({panes: panes});
